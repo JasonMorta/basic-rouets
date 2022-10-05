@@ -1,7 +1,9 @@
 import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Nav() {
+
    //set the default state color to red which is equal to home page color.
   const [state, setState] = React.useState({
     home: "#f44336",
@@ -11,17 +13,41 @@ export default function Nav() {
     active: "",
     location : window.location.pathname
   });
-  const [color, setColor] = React.useState("white")
+  const [color, setColor] = React.useState("white");
+
+  const [blank, setBlank] = useState(false)
 
 
-  console.log(state.location)
+
+function newsTab(e){
+  setState(prev => ({...prev, active:"#4caf50", location: "/News" }));
+  
+  setBlank(true)
+
+if (blank) {
+  e.target.text = "🎈"
+} else {
+  e.target.text = "News"
+}
+console.log(blank)
+setBlank(false)
+}
+
+function homeTab(){
+  setState(prev => ({...prev, active:"#f44336", location: "/" }))
+  setBlank(false)
+  setBlank(true)
+}
+
+
+  //console.log(state.location)
   return (
     <header className="App-header">
       {/* Home will be the default/home page */}
       <Link
         to="/"
         className="tablink"
-        onClick={() => setState(prev => ({...prev, active:"#f44336", location: "/" }))}
+        onClick={homeTab}
         style={{ 
           backgroundColor: state.location === "/" ? "#f44336" : "", 
           color: state.home === "#f44336" ? color: "#ffc107"}}>
@@ -31,7 +57,7 @@ export default function Nav() {
       <Link
         to="/News"
         className="tablink"
-        onClick={() => setState(prev => ({...prev, active:"#4caf50", location: "/News" }))}
+        onClick={newsTab}
         style={{ 
           backgroundColor: state.location === "/News" ? "#4caf50" : "",
           color: state.news === "#4caf50" ? color: "#ffc107" }}>

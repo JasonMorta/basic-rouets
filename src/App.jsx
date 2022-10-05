@@ -8,20 +8,17 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import News from './pages/News';
 import NotFound from './pages/NotFound';
+import { useState } from 'react';
 
 
 
 
-export default class App extends Component {
-constructor(props) {
-  super(props)
 
-  this.state = {
-     learning_routes:true,
-  }
-}
+export default function App() {
 
-  render() {
+  const [hide, setHide] = useState();
+
+  
     return (
       <BrowserRouter>
 
@@ -31,7 +28,7 @@ constructor(props) {
           <Nav />
           <Routes>
           <Route  path="/" element={ <Home />}/>
-          <Route  path="/News" element={ <News />}/>
+          <Route  path="/News" element={ <News  />}/>
           <Route  path="/Contact" element={ <Contact />}/>
           <Route  path="/About" element={ <About />}/>
           <Route  path="*" element={ <NotFound />}/>
@@ -47,4 +44,4 @@ constructor(props) {
     </BrowserRouter>
     )
   }
-}
+

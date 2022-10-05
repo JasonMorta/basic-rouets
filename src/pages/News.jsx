@@ -7,7 +7,7 @@ export default function News() {
 
   const scrollDown = useRef();
 
-  console.log(scrollDown)
+  //console.log(scrollDown)
 
   const goToTop = () => {
     window.scrollTo({
