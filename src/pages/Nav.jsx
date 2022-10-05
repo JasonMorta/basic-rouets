@@ -17,27 +17,26 @@ export default function Nav() {
 
   const [blank, setBlank] = useState(false)
 
-
+  let paint ={ 
+    backgroundColor: state.location === "/News" ? "#4caf50" : "",
+    color: state.news === "#4caf50" ? color: "#ffc107" }
 
 function newsTab(e){
   setState(prev => ({...prev, active:"#4caf50", location: "/News" }));
-  
-  setBlank(true)
 
-if (blank) {
-  e.target.text = "🎈"
-} else {
-  e.target.text = "News"
+  if (state.location === "/News") {
+    e.target.id = "hide"
+  } else {
+    e.target.id = "NotHide"
+  }
 }
-console.log(blank)
-setBlank(false)
-}
+
+
 
 function homeTab(){
   setState(prev => ({...prev, active:"#f44336", location: "/" }))
-  setBlank(false)
-  setBlank(true)
 }
+
 
 
   //console.log(state.location)
@@ -58,9 +57,7 @@ function homeTab(){
         to="/News"
         className="tablink"
         onClick={newsTab}
-        style={{ 
-          backgroundColor: state.location === "/News" ? "#4caf50" : "",
-          color: state.news === "#4caf50" ? color: "#ffc107" }}>
+        style={paint}>
         News
       </Link>
 

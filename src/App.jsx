@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import News from './pages/News';
 import NotFound from './pages/NotFound';
 import { useState } from 'react';
+import LoadingScreen from './components/LoadingScreen';
 
 
 
@@ -23,6 +24,7 @@ export default function App() {
       <BrowserRouter>
 
       <div className="App">
+        <LoadingScreen />
        
         <div className='routes'>
           <Nav />
