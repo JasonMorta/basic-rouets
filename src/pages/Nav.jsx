@@ -16,7 +16,6 @@ const [hideText, setHideText] = useState("tablink NotHide")
 
   const [color, setColor] = React.useState("white");
 
-  const [blank, setBlank] = useState(false)
 
   let paint ={ 
     backgroundColor: state.location === "/News" ? "#4caf50" : "",
