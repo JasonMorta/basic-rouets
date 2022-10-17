@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Nav() {
-
+const [hideText, setHideText] = useState("tablink NotHide")
    //set the default state color to red which is equal to home page color.
   const [state, setState] = React.useState({
     home: "#f44336",
@@ -13,6 +13,7 @@ export default function Nav() {
     active: "",
     location : window.location.pathname
   });
+
   const [color, setColor] = React.useState("white");
 
   const [blank, setBlank] = useState(false)
@@ -24,11 +25,6 @@ export default function Nav() {
 function newsTab(e){
   setState(prev => ({...prev, active:"#4caf50", location: "/News" }));
 
-  if (state.location === "/News") {
-    e.target.id = "hide"
-  } else {
-    e.target.id = "NotHide"
-  }
 }
 
 
@@ -58,7 +54,7 @@ function homeTab(){
         className="tablink"
         onClick={newsTab}
         style={paint}>
-        News
+        {state.location === "/News" ? "": "News"}
       </Link>
 
       <Link
@@ -67,7 +63,7 @@ function homeTab(){
         onClick={() => setState(prev => ({...prev, active:"#2196f3", location: "/Contact" }))}
         style={{ 
           backgroundColor: state.location === "/Contact" ? "#2196f3" : "", 
-          color: state.contact === "#2196f3" ? color: "#ffc107" }}>
+          color: state.contact === "#2196f3" ? color : "#ffc107" }}>
         Contact
       </Link>
 

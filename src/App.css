@@ -57,7 +57,7 @@ font-family: 'Varela Round', sans-serif;
   justify-content: center;
   font-size: calc(0.625rem + 2vmin);
   color: white;
-  align-items: flex-start;
+  align-items: stretch;
   width: 100%;
 }
 
@@ -110,5 +110,6 @@ font-family: 'Varela Round', sans-serif;
   width: 60vw;
   background-color: azure;
   margin-top: 3.125rem;
+  margin-bottom: 3.125rem;
   box-shadow: 0.125rem 0.125rem 0.1875rem 0rem #ff980066;
 }
