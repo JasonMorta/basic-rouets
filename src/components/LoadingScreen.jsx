@@ -9,7 +9,6 @@ const [ currentTime, setCurrentTime ] = useState(100);
 const [index, setIndex] = useState(3)
 
  let loadingEffect = {
- 
   top: "50%",
   left: "50%",
   zIndex: index,
