@@ -29,7 +29,7 @@ export default function App() {
         <div className='routes'>
           <Nav />
           <Routes>
-          <Route  path="/" element={ <Home />}/>
+          <Route  path="/" element={ <Home hide={hide}/>}/>
           <Route  path="/News" element={ <News  />}/>
           <Route  path="/Contact" element={ <Contact />}/>
           <Route  path="/About" element={ <About />}/>
