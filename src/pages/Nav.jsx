@@ -67,7 +67,7 @@ function homeTab(){
       </Link>
 
       <Link
-        to="/About"
+         to={{ pathname: '/About', state: { message: state.message } }}
         className="tablink"
         onClick={() => setState(prev => ({...prev, active:"#ff5722", location: "/About" }))}
         style={{ 
